@@ -1,6 +1,7 @@
 import React from "react";
 import { FaHome, FaPlus } from "react-icons/fa";
 import { useState } from "react";
+import Navbar from "./components/Navbar";
 
 function Home() {
 	const [setStudentName, studentName] = useState(""); //this will be used to display dynamic names
@@ -13,11 +14,7 @@ function Home() {
 	let name = "Student";
 	return (
 		<>
-			<nav className="w-100 p-4 bg-gray-500">
-				<button type="button">
-					<FaHome fontSize="2em" className="ml-5" />
-				</button>
-			</nav>
+			<Navbar />
 			<h1 className="ml-10 mt-10 text-xl">Welcome {name}</h1>
 			<div className="m-5">
 				<ul className="grid grid-flow-row grid-cols-3 gap-10 my-5">
