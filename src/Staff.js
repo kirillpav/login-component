@@ -1,6 +1,8 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 
+import data from "./json/test.json";
+
 function Staff() {
 	return (
 		<>
@@ -32,14 +34,21 @@ function Staff() {
 								<th className="border px-4 py-2">Preferred Time</th>
 								<th className="border px-4 py-2">Freeze</th>
 							</tr>
-							<tr>
-								<td className="border px-4 py-2 text-center">"Placeholder"</td>
-								<td className="border px-4 py-2 text-center">"Placeholder"</td>
-								<td className="border px-4 py-2 text-center">"Placeholder"</td>
-								<td className="border px-4 py-2 text-center">"Placeholder"</td>
-								<td className="border px-4 py-2 text-center">"Placeholder"</td>
-								<td className="border px-4 py-2 text-center">"Placeholder"</td>
-							</tr>
+
+							{data.staff.map((e) => (
+								<tr key={e.id}>
+									<td className="border px-4 py-2 text-center">{e.name}</td>
+									<td className="border px-4 py-2 text-center">{e.position}</td>
+									<td className="border px-4 py-2 text-center">{e.cur_hrs}</td>
+									<td className="border px-4 py-2 text-center">
+										{e.total_hrs}
+									</td>
+									<td className="border px-4 py-2 text-center">
+										{e.preffered_time}
+									</td>
+									<td className="border px-4 py-2 text-center">{e.freeze}</td>
+								</tr>
+							))}
 						</thead>
 						<tbody>{/* Rows can be added here */}</tbody>
 					</table>

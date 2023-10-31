@@ -1,3 +1,30 @@
 {
-	"courses": ["CS 61A", "CS 61B", "CS 61C", "CS 70"]
+	"courses": ["CS 61A", "CS 61B", "CS 61C", "CS 70"],
+	"events": [
+		{
+			"id": "0",
+			"title": "In-Person Office Hours",
+			"start": "2023-10-23T12:00",
+			"location": "Warren 101B",
+			"attendees": ["Jade Wang", "Darlnim Park"]
+		},
+		{
+			"id": "1",
+			"title": "Online Office Hours",
+			"start": "2023-10-24T16:00",
+			"location": "Online",
+			"attendees": ["Kevin Han", "Cyrus Hung"]
+		}
+	],
+	"staff": [
+		{
+			"id": "0",
+			"name": "jade",
+			"position": "tutor",
+			"cur_hrs": "10",
+			"total_hrs": "5",
+			"preffered_time": "11:00",
+			"freeze": "true"
+		}
+	]
 }
