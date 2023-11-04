@@ -33,6 +33,9 @@ function Staff() {
 								<th className="border px-4 py-2">Total Hours</th>
 								<th className="border px-4 py-2">Preferred Time</th>
 								<th className="border px-4 py-2">Freeze</th>
+								<th className="border px-4 py-2">Email</th>
+								<th className="border px-4 py-2">Invite Sent</th>
+								<th className="border px-4 py-2">Joined</th>
 							</tr>
 
 							{data.staff.map((e) => (
