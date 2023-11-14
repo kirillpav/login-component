@@ -1,0 +1,4 @@
+{
+  "valid": "boolean - whether the configuratin is valid or not",
+  "message": "String - if valid contains what needs to be fixed"
+}
