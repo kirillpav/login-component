@@ -1,9 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 
 import data from "./json/test.json";
 
 function Staff() {
+	const [currHours, setCurrHours] = useState(0);
+	const [totalHours, setTotalHours] = useState(0);
+
+	function incrementTotalHours() {
+		setTotalHours((prevTotalHours) => {
+			return (prevTotalHours += 1);
+		});
+	}
+
+	function decrementTotalHours() {
+		setTotalHours((prevTotalHours) => {
+			if (prevTotalHours == 0) {
+				return prevTotalHours;
+			} else {
+				return (prevTotalHours -= 1);
+			}
+		});
+	}
+
+	function incrementCurrHours() {
+		setCurrHours((prevCurrHours) => {
+			return (prevCurrHours += 1);
+		});
+	}
+
+	function decrementCurrHours() {
+		setCurrHours((prevCurrHours) => {
+			if (prevCurrHours == 0) {
+				return prevCurrHours;
+			} else {
+				return (prevCurrHours -= 1);
+			}
+		});
+	}
+
 	return (
 		<>
 			<Navbar />
@@ -42,9 +77,37 @@ function Staff() {
 								<tr key={e.id}>
 									<td className="border px-4 py-2 text-center">{e.name}</td>
 									<td className="border px-4 py-2 text-center">{e.position}</td>
-									<td className="border px-4 py-2 text-center">{e.cur_hrs}</td>
-									<td className="border px-4 py-2 text-center">
-										{e.total_hrs}
+									<td className="px-4 py-2 flex items-center justify-center">
+										<button
+											onClick={decrementCurrHours}
+											className="border rounded-sm flex items-center justify-center w-8 h-8"
+										>
+											-
+										</button>
+										<span className="mx-2">{currHours}</span>
+										<button
+											onClick={incrementCurrHours}
+											className="border rounded-sm flex items-center justify-center w-8 h-8"
+										>
+											+
+										</button>
+									</td>
+									<td className="border px-4 py-2 text-center ">
+										<div className="flex items-center justify-center">
+											<button
+												onClick={decrementTotalHours}
+												className="border rounded-sm flex items-center justify-center w-8 h-8"
+											>
+												-
+											</button>
+											<span className="mx-2">{totalHours}</span>
+											<button
+												onClick={incrementTotalHours}
+												className="border rounded-sm flex items-center justify-center w-8 h-8"
+											>
+												+
+											</button>
+										</div>
 									</td>
 									<td className="border px-4 py-2 text-center">
 										{e.preffered_time}
@@ -64,7 +127,7 @@ function Staff() {
 							/>
 						</div>
 						<button className="bg-green-400 px-4 py-2 rounded float-right mt-4 hover:bg-green-500">
-							+
+							Save
 						</button>
 					</div>
 				</div>
