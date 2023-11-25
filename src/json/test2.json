@@ -1,4 +1,19 @@
 {
-  "valid": "boolean - whether the configuratin is valid or not",
-  "message": "String - if valid contains what needs to be fixed"
+	"valid": "boolean - whether the operation succeeded or not",
+	"message": "String - if not valid, contains what needs to be fixed.",
+	"data": [
+		{
+			"email": "darl@berkeley.edu",
+			"role": "Tutor",
+			"appointmentHours": 8,
+			"ohHoursPerWeek": 3,
+			"preferredContiguousHours": 3,
+			"hoursLeft": 32,
+			"hoursAdjustment": -3,
+			"availabilitiesValid": true,
+			"availabilitiesMessage": null,
+			"preferencesValid": false,
+			"perferencesMessage": "change contiguous hours to int"
+		}
+	]
 }

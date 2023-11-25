@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 
-import data from "./json/test.json";
+import data from "./json/test2.json";
 
 function Staff() {
 	const [currHours, setCurrHours] = useState(0);
@@ -67,16 +67,15 @@ function Staff() {
 								<th className="border px-4 py-2">Current Hours</th>
 								<th className="border px-4 py-2">Total Hours</th>
 								<th className="border px-4 py-2">Preferred Time</th>
-								<th className="border px-4 py-2">Freeze</th>
 								<th className="border px-4 py-2">Email</th>
 								<th className="border px-4 py-2">Invite Sent</th>
 								<th className="border px-4 py-2">Joined</th>
 							</tr>
 
-							{data.staff.map((e) => (
+							{data.data.map((e) => (
 								<tr key={e.id}>
-									<td className="border px-4 py-2 text-center">{e.name}</td>
-									<td className="border px-4 py-2 text-center">{e.position}</td>
+									<td className="border px-4 py-2 text-center">{e.email}</td>
+									<td className="border px-4 py-2 text-center">{e.role}</td>
 									<td className="px-4 py-2 flex items-center justify-center">
 										<button
 											onClick={decrementCurrHours}
@@ -84,7 +83,7 @@ function Staff() {
 										>
 											-
 										</button>
-										<span className="mx-2">{currHours}</span>
+										<span className="mx-2">{e.appointmentHours}</span>
 										<button
 											onClick={incrementCurrHours}
 											className="border rounded-sm flex items-center justify-center w-8 h-8"
