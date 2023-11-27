@@ -65,8 +65,8 @@ function Staff() {
 								<th className="border px-4 py-2">Name</th>
 								<th className="border px-4 py-2">Role</th>
 								<th className="border px-4 py-2">Appointment Hours</th>
-								<th className="border px-4 py-2">Hours Per Wekks</th>
-								<th className="border px-4 py-2">Preferred Time</th>
+								<th className="border px-4 py-2">Hours Per Weeks</th>
+								<th className="border px-4 py-2">Hours Left</th>
 								<th className="border px-4 py-2">Email</th>
 								<th className="border px-4 py-2">Invite Sent</th>
 								<th className="border px-4 py-2">Joined</th>
