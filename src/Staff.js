@@ -71,7 +71,6 @@ function Staff() {
 								<th className="border px-4 py-2">Invite Sent</th>
 								<th className="border px-4 py-2">Joined</th>
 							</tr>
-
 							{data.data.map((e) => (
 								<tr key={e.id}>
 									<td className="border px-4 py-2 text-center">{e.email}</td>
