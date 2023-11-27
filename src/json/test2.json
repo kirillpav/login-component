@@ -11,8 +11,8 @@
 			"hoursLeft": 32,
 			"hoursAdjustment": -3,
 			"availabilitiesValid": true,
-			"availabilitiesMessage": null,
-			"preferencesValid": false,
+			"availabilitiesMessage": "Something",
+			"preferencesValid": true,
 			"perferencesMessage": "change contiguous hours to int"
 		}
 	]
