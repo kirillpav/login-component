@@ -1,11 +1,24 @@
 import React, { useState } from "react";
 import Navbar from "./components/Navbar";
+import Modal from "./components/Modal";
 
 import data from "./json/test2.json";
 
 function Staff() {
 	const [currHours, setCurrHours] = useState(0);
 	const [totalHours, setTotalHours] = useState(0);
+	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [selectedRowData, setSelectedRowData] = useState(null);
+
+	function openModal(rowData) {
+		setSelectedRowData(rowData);
+		setIsModalOpen(true);
+	}
+
+	function closeModal() {
+		setIsModalOpen(false);
+		setSelectedRowData(null);
+	}
 
 	function incrementTotalHours() {
 		setTotalHours((prevTotalHours) => {
@@ -127,11 +140,17 @@ function Staff() {
 											{e.perferencesMessage}
 										</td>
 									)}
+									<td className="border px-x py-2 text-center">
+										<button onClick={() => openModal(e)}>Edit</button>
+									</td>
 								</tr>
 							))}
 						</thead>
 						<tbody>{/* Rows can be added here */}</tbody>
 					</table>
+					{isModalOpen && (
+						<Modal rowData={selectedRowData} closeModal={closeModal} />
+					)}
 					<div className="mt-4">
 						<div className="mt-4">
 							Share Course Id:{" "}
