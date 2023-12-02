@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Modal from "./components/Modal";
 
@@ -52,6 +52,12 @@ function Staff() {
 		});
 	}
 
+	useEffect(() => {
+		if (data.data.length > 0) {
+			setSelectedRowData(data.data[0]);
+		}
+	}, []);
+
 	function selectRowData(rowData) {
 		setSelectedRowData(rowData);
 	}
@@ -74,13 +80,7 @@ function Staff() {
 				</div>
 
 				{/* Main Content */}
-				<div className="outside-modal-button">
-					{selectedRowData && (
-						<button onClick={() => setIsModalOpen(true)}>
-							Open Selected Row Modal
-						</button>
-					)}
-				</div>
+
 				<div className="w-3/4 bg-white p-4">
 					<h2 className="text-2xl font-semibold mb-4">Staff</h2>
 					<table className="min-w-full border">
@@ -95,9 +95,11 @@ function Staff() {
 								<th className="border px-4 py-2">Hours Adjustment</th>
 								<th className="border px-4 py-2">Availablities Message</th>
 								<th className="border px-4 py-2">Preference Message</th>
+								<th className="border px-4 py-2">Preferences</th>
+								<th className="border px-4 py-2">Availabilities</th>
 							</tr>
 							{data.data.map((e) => (
-								<tr key={e.id}>
+								<tr key={e.id} onClick={() => selectRowData(e)}>
 									<td className="border px-4 py-2 text-center">{e.email}</td>
 									<td className="border px-4 py-2 text-center">{e.role}</td>
 									<td className="px-4 py-2 flex items-center justify-center">
@@ -151,14 +153,29 @@ function Staff() {
 											{e.perferencesMessage}
 										</td>
 									)}
-									<td className="border px-x py-2 text-center">
-										<button onClick={() => openModal(e)}>Edit</button>
+									<td className="border px-4 py-2 text-center">
+										<button className="bg-green-400 px-4 py-2 rounded float-right mt-4 hover:bg-green-500">
+											Edit Preferences
+										</button>
+									</td>
+									<td className="border px-4 py-2 text-center">
+										<button className="bg-green-400 px-4 py-2 rounded float-right mt-4 hover:bg-green-500">
+											Edit Availabilities
+										</button>
 									</td>
 								</tr>
 							))}
 						</thead>
 						<tbody>{/* Rows can be added here */}</tbody>
 					</table>
+					<div className="outside-modal-button">
+						<button
+							className="bg-green-400 px-4 py-2 rounded float-right mt-4 hover:bg-green-500"
+							onClick={() => setIsModalOpen(true)}
+						>
+							Open Modal
+						</button>
+					</div>
 					{isModalOpen && (
 						<Modal rowData={selectedRowData} closeModal={closeModal} />
 					)}

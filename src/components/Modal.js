@@ -3,7 +3,7 @@ import React from "react";
 function Modal({ rowData, closeModal }) {
 	return (
 		<div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-			<div className="bg-white p-6 rounded-lg shadow-xl">
+			<div className="bg-white p-6 rounded-lg shadow-xl w-96">
 				<h2 className="text-xl font-bold mb-4">Edit Staff Data</h2>
 				<form>
 					<div className="mb-4">
