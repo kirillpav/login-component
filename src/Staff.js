@@ -146,11 +146,15 @@ function Staff() {
 									<td className="border px-x py-2 text-center">
 										<button onClick={() => openModal(e)}>Edit</button>
 									</td>
+									<button className="bg-green-400 px-4 py-2 rounded float-right mt-4 hover:bg-green-500" onClick={() => openModal(e)}>Edit</button>
 								</tr>
+								
 							))}
+							
 						</thead>
 						<tbody>{/* Rows can be added here */}</tbody>
 					</table>
+					
 					{isModalOpen && (
 						<Modal rowData={selectedRowData} closeModal={closeModal} />
 					)}
