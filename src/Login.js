@@ -1,7 +1,7 @@
 import "./App.css";
 import { FaGoogle } from "react-icons/fa";
 
-function App() {
+function Login() {
 	return (
 		<section class="bg-stone-50">
 			<div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
@@ -32,4 +32,4 @@ function App() {
 	);
 }
 
-export default App;
+export default Login;
