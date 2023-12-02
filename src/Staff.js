@@ -52,6 +52,10 @@ function Staff() {
 		});
 	}
 
+	function selectRowData(rowData) {
+		setSelectedRowData(rowData);
+	}
+
 	return (
 		<>
 			<Navbar />
@@ -70,6 +74,13 @@ function Staff() {
 				</div>
 
 				{/* Main Content */}
+				<div className="outside-modal-button">
+					{selectedRowData && (
+						<button onClick={() => setIsModalOpen(true)}>
+							Open Selected Row Modal
+						</button>
+					)}
+				</div>
 				<div className="w-3/4 bg-white p-4">
 					<h2 className="text-2xl font-semibold mb-4">Staff</h2>
 					<table className="min-w-full border">
