@@ -84,6 +84,8 @@ function Staff() {
 								<th className="border px-4 py-2">Hours Adjustment</th>
 								<th className="border px-4 py-2">Availablities Message</th>
 								<th className="border px-4 py-2">Preference Message</th>
+								<th className="border px-4 py-2">Preferences</th>
+								<th className="border px-4 py-2">Availabilities</th>
 							</tr>
 							{data.data.map((e) => (
 								<tr key={e.id}>
@@ -140,6 +142,7 @@ function Staff() {
 											{e.perferencesMessage}
 										</td>
 									)}
+									
 									<td className="border px-x py-2 text-center">
 										<button onClick={() => openModal(e)}>Edit</button>
 									</td>
